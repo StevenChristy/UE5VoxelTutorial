@@ -41,7 +41,7 @@ protected:
 	virtual void Generate3DHeightMap(const FVector Position) PURE_VIRTUAL(AChunkBase::Generate3DHeightMap);
 	virtual void GenerateMesh() PURE_VIRTUAL(AChunkBase::GenerateMesh);
 
-	virtual void ModifyVoxelData(const FIntVector Position, const EVoxelTutorialBlock Block) PURE_VIRTUAL(AChunkBase::RemoveVoxelData);
+	virtual void ModifyVoxelData(const FIntVector Position, const EVoxelTutorialBlock Block) PURE_VIRTUAL(AChunkBase::ModifyVoxelData);
 
 	TObjectPtr<UProceduralMeshComponent> Mesh;
 	FastNoiseLite* Noise;

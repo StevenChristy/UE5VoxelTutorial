@@ -22,7 +22,7 @@ public:
 	// Sets default values for this actor's properties
 	AChunkBase();
 
-	UPROPERTY(EditDefaultsOnly, Category="Chunk")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Chunk")
 	int Size = 64;
 	
 	TObjectPtr<UMaterialInterface> Material;

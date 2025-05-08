@@ -25,6 +25,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Chunk")
 	int Size = 64;
 	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Chunk")
+	float BlockSize = 100.f;
+	
 	TObjectPtr<UMaterialInterface> Material;
 	float Frequency;
 	EVoxelTutorialGenerationType GenerationType;
@@ -41,7 +44,10 @@ protected:
 	virtual void Generate3DHeightMap(const FVector Position) PURE_VIRTUAL(AChunkBase::Generate3DHeightMap);
 	virtual void GenerateMesh() PURE_VIRTUAL(AChunkBase::GenerateMesh);
 
-	virtual void ModifyVoxelData(const FIntVector Position, const EVoxelTutorialBlock Block) PURE_VIRTUAL(AChunkBase::RemoveVoxelData);
+	virtual void ModifyVoxelData(const FIntVector Position, const EVoxelTutorialBlock Block)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ModifyVoxelData not implemented"));
+	}
 
 	TObjectPtr<UProceduralMeshComponent> Mesh;
 	FastNoiseLite* Noise;

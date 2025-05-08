@@ -43,7 +43,7 @@ void AChunkWorld::Generate3DWorld()
 			{
 				auto transform = FTransform(
 					FRotator::ZeroRotator,
-					FVector(x * Size * 100, y * Size * 100, z * Size * 100),
+					FVector(x * Size * BlockSize, y * Size * BlockSize, z * Size * BlockSize),
 					FVector::OneVector
 				);
 
@@ -57,6 +57,7 @@ void AChunkWorld::Generate3DWorld()
 				chunk->Frequency = Frequency;
 				chunk->Material = Material;
 				chunk->Size = Size;
+				chunk->BlockSize = BlockSize;
 
 				UGameplayStatics::FinishSpawningActor(chunk, transform);
 
@@ -74,7 +75,7 @@ void AChunkWorld::Generate2DWorld()
 		{
 			auto transform = FTransform(
 				FRotator::ZeroRotator,
-				FVector(x * Size * 100, y * Size * 100, 0),
+				FVector(x * Size * BlockSize, y * Size * BlockSize, 0),
 				FVector::OneVector
 			);
 
@@ -88,6 +89,7 @@ void AChunkWorld::Generate2DWorld()
 			chunk->Frequency = Frequency;
 			chunk->Material = Material;
 			chunk->Size = Size;
+			chunk->BlockSize = BlockSize;
 
 			UGameplayStatics::FinishSpawningActor(chunk, transform);
 

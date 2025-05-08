@@ -29,6 +29,10 @@ public:
 	UPROPERTY(EditInstanceOnly, Category="Chunk")
 	int Size = 32;
 
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category="Chunk")
+	float BlockSize = 100.f;
+	
+
 	UPROPERTY(EditInstanceOnly, Category="Height Map")
 	EVoxelTutorialGenerationType GenerationType;
 

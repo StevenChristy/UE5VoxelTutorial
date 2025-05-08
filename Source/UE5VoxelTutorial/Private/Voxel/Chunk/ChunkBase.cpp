@@ -48,10 +48,10 @@ void AChunkBase::GenerateHeightMap()
 	switch (GenerationType)
 	{
 	case EVoxelTutorialGenerationType::GT_3D:
-		Generate3DHeightMap(GetActorLocation() / 100);
+		Generate3DHeightMap(GetActorLocation() / BlockSize);
 		break;
 	case EVoxelTutorialGenerationType::GT_2D:
-		Generate2DHeightMap(GetActorLocation() / 100);
+		Generate2DHeightMap(GetActorLocation() / BlockSize);
 		break;
 	default:
 		throw std::invalid_argument("Invalid Generation Type");
